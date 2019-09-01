@@ -31,14 +31,23 @@ Hope I give to you the basic idea. Let's try a demo.
 
 🌍[Click here for the online version of the demo](https://nicolo-carpignoli.herokuapp.com/examples/basic.html)!
 
-The demo code is at [examples/basic.html](examples/basic.html).
+There are currently three different examples that use GeoAR.js.
 
-It uses the [examples/places.js](./examples/places.js) script to load places. You can use that with static data using your coordinates, adding these info in the first lines of code (there are comments to explain better).
+- [Click Places](./examples/click-places/) 
 
-Otherwise, as default, the script searches for places of interest near the user using Foursquare APIs. Please retrieve valid API credentials [here](https://developer.foursquare.com/) in order to use it. Place credentials (client secret and client id) on `examples/places.js` line 25 or so.
+    Show place icon for every place. Clicking on the icon it shows the place name.
+- [Places Name](./examples/places-name/) [WIP]
 
-You can also use GeoAR.js **without** the script, adding `gps-entity-place` entities as documentated on the following section, 
-putting them directly on the `basic.html` file.
+    Show place name for every place. 
+- [Add Objects](./examples/add-objects/) [WIP]
+    
+    Add one or more objects on certain GPS positions and see them in real world with your camera.
+
+Every example uses the `places.js` script to load places. You can use that with static data using your coordinates, adding these info in the first lines of code (there are comments to explain better).
+
+Otherwise, as default, the script searches for places of interest near the user using Foursquare APIs. Please retrieve valid API credentials [here](https://developer.foursquare.com/) in order to use it. Place credentials (client secret and client id) on `places.js`.
+
+You can also use GeoAR.js **without** the script, adding `gps-entity-place` entities as documentated on the following section, putting them directly on the `index.html` file.
 
 ## Components
 
@@ -100,7 +109,10 @@ It has to be added to the `a-scene`:
 
 Tried on Huawei P20, works like charm.
 
-Problem with iPhone 6, loads all good but when rotating and moving the camera, places position are not updated and remain fixed.
+Works good also on iPhone 6.
+
+On iOS, from 12.2, Motion sensors on Safari has be to activated from Settings. If not, GeoAR.js will prompt the user to do so.
+This [may change with final release of iOS 13](https://developer.apple.com/documentation/safari_release_notes/safari_13_beta_6_release_notes) but as September 2019 is not yet out.
 
 We need a lot of more tests, but the first impression is: the more advanced the phone (so newer) the better. This because of better quality sensors.
 
@@ -108,6 +120,7 @@ We need a lot of more tests, but the first impression is: the more advanced the 
 
 It is based on the discussion from this [github issue](https://github.com/jeromeetienne/AR.js/issues/190).
 It has been originated by [1d10t](https://github.com/1d10t) in this [file](https://1d10t.github.io/test/phills-sphere.html).
-This project has been originally crated by Jerome Etienne as a branch of AR.js and then as standalone repository, but was left alone from 2017. Now I'm trying to bring it alive again!
+The first mock up project has been originally created by Jerome Etienne as a branch of AR.js and then as standalone repository, but was left alone from 2017. 
+What I'm doing is to bring it alive and kicking for the first time since its creation.
 
 Thanks a LOT for all contributions! ❤️
