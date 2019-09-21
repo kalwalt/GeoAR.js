@@ -1,16 +1,16 @@
 const loadPlaces = function(coords) {
     // COMMENT FOLLOWING LINE IF YOU WANT TO USE STATIC DATA AND ADD COORDINATES IN THE FOLLOWING 'PLACES' ARRAY
-    const method = 'api';
+    const method = 'noapi';
     let place_count = 0;
     let tot;
     let name;
 
     const PLACES = [
         {
-            name: 'gigi',
+            name: "test",
             location: {
-                lat: 0, // add here latitude if using static data
-                lng: 0, // add here longitude if using static data
+                lat: 48.814461, // add here latitude if using static data
+                lng: 3.132332, // add here longitude if using static data
             }
         },
     ];
@@ -19,7 +19,7 @@ const loadPlaces = function(coords) {
         return loadPlaceFromAPIs(coords);
     }
 
-    return PLACES;
+    return Promise.resolve(PLACES);
 };
 
 // getting places from REST APIs
@@ -76,7 +76,7 @@ window.onload = () => {
                     const box = document.createElement('a-box');
                     //console.log(place);
 
-                    const addBox = function(place, position) {
+                    /*const addBox = function(place, position) {
                     place.location.lat = position.coords.lat;
                     place.location.lng = position.coords.lng;
                     place.push();
@@ -84,7 +84,7 @@ window.onload = () => {
                     const params = {
                       addBox: addBox()
                     };
-                    gui.add( params, 'addBox' );
+                    gui.add( params, 'addBox' );*/
 
                     box.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     box.setAttribute('color:','yellow');
