@@ -88,7 +88,7 @@ window.onload = () => {
 
                     box.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     box.setAttribute('color:','yellow');
-                    console.log('model at: ${latitude}, ${longitude}');
+                    console.log('model at:', latitude, longitude);
                     box.setAttribute('scale', '20, 20');
                     box.addEventListener('loaded', () => window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')));
                     scene.appendChild(box);
