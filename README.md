@@ -1,14 +1,15 @@
 # GeoAR.js
 
+To better introduce this library I wrote an [article on Medium](https://medium.com/chialab-open-source/location-based-gps-augmented-reality-on-the-web-7a540c515b3c). You can start from it.
+
 ## Overview
 
 🌍The aim is to bring a basic but working Location Based AR system to the actual [AR.js](https://github.com/jeromeetienne/AR.js/) (currently marker based only).
 
-This is still experimental and a Work In Progress.
-The original version was working with some limitations, but now it's outdated (it was based on [aframe](https://aframe.io/) v0.6.0, now we have [aframe](https://aframe.io/) v0.9.0 version with different APIs).
+The original version was working with some limitations, but it is now outdated (it was based on [aframe](https://aframe.io/) v0.6.0, now we have [aframe](https://aframe.io/) v0.9.0 version with different APIs).
 The aim is to make it work with updated dependencies and possibly better performances, also refactoring for a more maintainable codebase.
 
-These `aframe` components can work independently from AR.js. By the way, they are a powerful and simple system that become interesting if added to AR.js' marker based capabilities, thus making AR.js a multiple-feature-AR library.
+These `aframe` components can work independently from AR.js. By the way, they are a powerful and simple system that become interesting if added to AR.js' marker based capabilities, thus making AR.js a multiple-AR library.
 
 🚀 **[Here](./CHANGELOG.md) you can track my updates about this project.**
 
@@ -22,20 +23,23 @@ Once you have added one or more gps-entities, and added the `gps-camera` on the 
 
 Using your phone sensors for orientation/position, it is able to show on your camera a content for each place on its 'physical' place (so if you point the camera toward the place in real life, you will see the content near it).
 
-If you move the camera, it calculates again orientation and position. If places are far, it shows thinner content. If places are near you, it shows it bigger.
+If you move the camera, it calculates again orientation and position. If places are far, it shows smaller content. If places are near you, it shows it bigger.
 Hope I give to you the basic idea. Let's try a demo.
 
 ## Demo
 
 >Work In Progress
 
-🌍[Click here for the online version of the demo](https://nicolo-carpignoli.herokuapp.com/examples/basic.html)!
+There are three different examples that use GeoAR.js.  
+Currently it's possible to see the examples only on local environment. You have to clone the project, set up the examples and then launch them.  
 
-There are currently three different examples that use GeoAR.js.
+🔜Online ready-to-use versions of the demo are coming soon.
 
 - [Click Places](./examples/click-places/) 
 
     Show place icon for every place. Clicking on the icon it shows the place name.
+
+    <img src="docs/click-places.gif">
 - [Places Name](./examples/places-name/) [WIP]
 
     Show place name for every place. 
