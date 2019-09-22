@@ -78,9 +78,8 @@ window.onload = () => {
                       let place_count = 0;
                       this.addBox = function() {
                         place.name = "box_" + place_count++;
-                        console.log(position.coords);
-                        place.location.lat = position.coords.lat;
-                        place.location.lng = position.coords.lng;
+                        place.location.lat = position.coords.latitude;
+                        place.location.lng = position.coords.longitude;
                         console.log(place.name + ' added at lat lng: ' + place.location.lat + ' ' + place.location.lng)
                         places.push(place);
                       };
