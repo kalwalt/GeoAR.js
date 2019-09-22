@@ -75,9 +75,10 @@ window.onload = () => {
                     const box = document.createElement('a-box');
                     //console.log(place);
                     var Params = function() {
+                      let place_count = 0;
                       this.addBox = function() {
-                        let place_count = 0;
                         place.name = "box_" + place_count++;
+                        console.log(position.coords);
                         place.location.lat = position.coords.lat;
                         place.location.lng = position.coords.lng;
                         console.log(place.name + ' added at lat lng: ' + place.location.lat + ' ' + place.location.lng)
