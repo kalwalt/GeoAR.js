@@ -74,17 +74,17 @@ window.onload = () => {
 
                     const box = document.createElement('a-box');
                     //console.log(place);
-                    var params = function() {
-                      this.addBox = function(place, position) {
+                    var Params = function() {
+                      this.addBox = function() {
                         let place_count = 0;
-                        place.name = "box_" + place_count;
-                        place.location.lat = pos.coords.lat;
-                        place.location.lng = pos.coords.lng;
+                        place.name = "box_" + place_count++;
+                        place.location.lat = position.coords.lat;
+                        place.location.lng = position.coords.lng;
+                        console.log(place.name + ' added at lat lng: ' + place.location.lat + ' ' + place.location.lng)
                         places.push(place);
-                        place_count++;
                       };
                     };
-                    params = new params();
+                    params = new Params();
                     gui.add( params, 'addBox' );
 
                     scene.setAttribute('renderer','precision: mediump');
