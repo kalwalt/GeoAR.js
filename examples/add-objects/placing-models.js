@@ -1,7 +1,6 @@
 const loadPlaces = function(coords) {
     // COMMENT FOLLOWING LINE IF YOU WANT TO USE STATIC DATA AND ADD COORDINATES IN THE FOLLOWING 'PLACES' ARRAY
     const method = 'noapi';
-    let place_count = 0;
     let tot;
     let name;
 
@@ -75,22 +74,27 @@ window.onload = () => {
 
                     const box = document.createElement('a-box');
                     //console.log(place);
+                    var params = function() {
+                      this.addBox = function(place, position) {
+                        let place_count = 0;
+                        place.name = "box_" + place_count;
+                        place.location.lat = pos.coords.lat;
+                        place.location.lng = pos.coords.lng;
+                        places.push(place);
+                        place_count++;
+                      };
+                    };
+                    params = new params();
+                    gui.add( params, 'addBox' );
 
-                    /*const addBox = function(place, position) {
-                    place.location.lat = position.coords.lat;
-                    place.location.lng = position.coords.lng;
-                    place.push();
-                    };
-                    const params = {
-                      addBox: addBox()
-                    };
-                    gui.add( params, 'addBox' );*/
+                    scene.setAttribute('renderer','precision: mediump');
 
                     box.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     box.setAttribute('color:','yellow');
                     console.log('model at:', latitude, longitude);
                     box.setAttribute('scale', '20, 20');
                     box.addEventListener('loaded', () => window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')));
+
                     scene.appendChild(box);
                   });
                 }
